@@ -1,30 +1,18 @@
 import { useState, useEffect } from 'react';
 import Store from './components/Store';
+import Shop from './components/Shop';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
-  const [storeItem, setStoreItem] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://fakestoreapi.com/products").then(({data}) => {
-     setStoreItem(data);
-    })
-  }, []);
-
-  const [categories, setCategories] = useState(
-    ['All']
-  );
-
-  useEffect(() => {
-    axios.get("https://fakestoreapi.com/products/categories").then(({data}) => {
-      setCategories([...categories, ...data]);
-    })
-  }, []);
-
   return (
-    <div>
-      <Store items={storeItem} categories={categories}/>
-    </div>
+    <Router forceRefresh={true}>
+      <Switch>
+        <Route exact path="/" component={props => <Store />} />
+        <Route exact path="/shop" component={props => <Shop/>} />
+        <Route>404 Not Found</Route>
+      </Switch>
+    </Router>
   );
 }
 

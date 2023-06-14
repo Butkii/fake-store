@@ -11,15 +11,24 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import StoreItem from './StoreItem';
 
-function Categories({categories}) {
+function Categories() {
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState(
+        ['All']
+    );
 
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products?limit=6").then(({data}) => {
             setProducts(data);
         })
-      }, []);
+    }, []);
 
+    useEffect(() => {
+        axios.get("https://fakestoreapi.com/products/categories").then(({data}) => {
+        setCategories([...categories, ...data]);
+        })
+    }, []);
+   
     function filterProducts(item) {
         if (item === 'All') {
             axios.get("https://fakestoreapi.com/products?limit=6").then(({data}) => {

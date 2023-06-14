@@ -4,8 +4,11 @@ import {
     Flex,
     Spacer,
     Text,
+    Button,
+    Input,
+    Link,
 } from '@chakra-ui/react';
-
+import {Link as RouterLink} from 'react-router-dom';
 import { Icon } from '@chakra-ui/react'
 import { 
     BsTelephone, 
@@ -31,9 +34,9 @@ function Header() {
         </Box>
         <Box>
             <Flex paddingX={20} paddingY={6} alignItems="center">
-                <Text my={1} mr={4} color="text.title" fontWeight={500} size={16}> 
+                <Link as={RouterLink }to='/shop' my={1} mr={4} color="text.title" fontWeight={500} size={16}> 
                     Shop 
-                </Text>
+                </Link>
                 <Text my={1} mr={4} color="text.title" fontWeight={500} size={16}> 
                     Promo 
                 </Text>
@@ -46,9 +49,8 @@ function Header() {
                 <Spacer/>
                 <Box width='40%' bgColor="base.white" borderRadius={4} padddingY={17} paddingX={30}>
                     <Flex alignItems={'left'} justifyContent={'space-between'}>
-                        <Text noOfLines={1} my={1} mr={4} color="text.body2" fontWeight={400} size={16}> 
-                            Search what you need 
-                        </Text>
+                        <Input border="0" noOfLines={1} my={1} mr={4} color="text.body2" fontWeight={400} size={16} placeholder="Search what you need">  
+                        </Input>
                         <Icon mx={2} my={2} color="text.body2" as={ BsSearch }/>
                     </Flex>
                 </Box>

@@ -14,28 +14,29 @@ import {
 import Header from './Header';
 import Hero from './Hero';
 import Categories from './Categories';
+import Products from './Products';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-function Store() {
+function Shop() {
    return (
         <Box backgroundColor="primary.100">
             <Header/>
             <Hero/>
-            <Categories/>
+            <Products/>
         </Box>
     );
 }
 
 /*
-const [storeItem, setStoreItem] = useState([]);
+const [ShopItem, setShopItem] = useState([]);
     
     useEffect(() => {
-        axios.get("https://fakestoreapi.com/products").then(({data}) => {
-        setStoreItem(data);
+        axios.get("https://fakeShopapi.com/products").then(({data}) => {
+        setShopItem(data);
         })
     }, []);
 
 */
 
-export default Store;
+export default Shop;
