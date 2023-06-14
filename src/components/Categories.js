@@ -46,7 +46,7 @@ function Categories() {
             <Heading fontWeight={700} size="lg" color="text.title" textAlign="center">
                 Our Premium Collection
             </Heading>
-            <Flex  paddingY={6} alignItems="center">
+            <Flex  paddingY={6} alignItems="center" justifyContent="center">
                 {categories.map(item => {
                     return <Heading backgroundColor="transparent" mx={4} fontSize="16px" fontWeight="700" color="text.body2" as={Button} onClick={() => {
                         filterProducts(item);
