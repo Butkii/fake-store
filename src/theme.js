@@ -5,6 +5,7 @@ const theme = extendTheme({
     heading: `'dm-sans', sans-serif`,
     title: `'dm-sans', sans-serif`,
     body: `'dm-sans', sans-serif`,
+    text: `'dm-sans', sans-serif`,
   },
   colors: {
     base: {

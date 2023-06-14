@@ -11,11 +11,19 @@ function App() {
     })
   }, []);
 
+  const [categories, setCategories] = useState(
+    ['All']
+  );
+
+  useEffect(() => {
+    axios.get("https://fakestoreapi.com/products/categories").then(({data}) => {
+      setCategories([...categories, ...data]);
+    })
+  }, []);
+
   return (
     <div>
-      <Store items={storeItem} onItemAdd={itemData => {
-        setStoreItem([...storeItem, itemData]);
-      }}/>
+      <Store items={storeItem} categories={categories}/>
     </div>
   );
 }

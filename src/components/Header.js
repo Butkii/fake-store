@@ -19,9 +19,9 @@ import {
 
 function Header() {
     return <Box>
-        <Box bgColor="base.white" height={75}>
-            <Flex paddingX={12} paddingY={4}>
-                <Heading fontWeight={700} color="secondary.500" size="lg">Dealerz.</Heading>
+        <Box bgColor="base.white">
+            <Flex paddingX={20} paddingY={6}>
+                <Heading fontWeight={700} color="secondary.500" size="xl">Dealerz.</Heading>
                 <Spacer/>
                 <Icon mx={2} my={2} color="text.title" as={ BsTelephone }/>
                 <Text my={1} mr={4} color="text.title" fontWeight={500}> Call Center </Text>
@@ -29,8 +29,8 @@ function Header() {
                 <Text my={1} mr={4} color="text.title" fontWeight={500}> Shipping and Returns </Text>
             </Flex>
         </Box>
-        <Box height={75}>
-            <Flex paddingX={12} paddingY={4} alignItems="center">
+        <Box>
+            <Flex paddingX={20} paddingY={6} alignItems="center">
                 <Text my={1} mr={4} color="text.title" fontWeight={500} size={16}> 
                     Shop 
                 </Text>

@@ -26,18 +26,18 @@ const StoreItem = ({title, category}) => {
     </Box>
 }
 
-function Store({items, onItemAdd}) {
+function Store({items, categories}) {
     return (
         <Box backgroundColor="primary.100">
             <Header/>
             <Hero/>
-            <Categories/>
+            <Categories categories={categories}/>
             <Box p={4}>
-                <SimpleGrid columns={3} spacing={4}>
+                {/* <SimpleGrid columns={3} spacing={4}>
                     {items.map(item => {
                         return <StoreItem title={item.title} category={item.category} />
                     })}
-                </SimpleGrid>
+                </SimpleGrid> */}
             </Box>
         </Box>
     );
