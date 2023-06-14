@@ -12,6 +12,8 @@ import {
     SimpleGrid,
 } from '@chakra-ui/react';
 import Header from './Header';
+import Hero from './Hero';
+import Categories from './Categories';
 
 const StoreItem = ({title, category}) => {
     return <Box p={4} borderRadius="lg" borderWidth="1px">
@@ -26,8 +28,10 @@ const StoreItem = ({title, category}) => {
 
 function Store({items, onItemAdd}) {
     return (
-        <Box>
+        <Box backgroundColor="primary.100">
             <Header/>
+            <Hero/>
+            <Categories/>
             <Box p={4}>
                 <SimpleGrid columns={3} spacing={4}>
                     {items.map(item => {
