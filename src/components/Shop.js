@@ -17,6 +17,7 @@ import Categories from './Categories';
 import Products from './Products';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import Footer from './Footer';
 
 function Shop() {
    return (
@@ -24,19 +25,10 @@ function Shop() {
             <Header/>
             <Hero/>
             <Products/>
+            <Spacer height="250px"/>
+            <Footer/>
         </Box>
     );
 }
-
-/*
-const [ShopItem, setShopItem] = useState([]);
-    
-    useEffect(() => {
-        axios.get("https://fakeShopapi.com/products").then(({data}) => {
-        setShopItem(data);
-        })
-    }, []);
-
-*/
 
 export default Shop;

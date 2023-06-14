@@ -16,6 +16,7 @@ import Hero from './Hero';
 import Categories from './Categories';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import Footer from './Footer';
 
 function Store() {
    return (
@@ -23,6 +24,8 @@ function Store() {
             <Header/>
             <Hero/>
             <Categories/>
+            <Spacer height="250px"/>
+            <Footer/>
         </Box>
     );
 }
