@@ -71,7 +71,7 @@ function Products() {
     return <Box paddingX={20} paddingY={6}>
         <Grid templateColumns='repeat(3, 1fr)' gap={4}> 
             <GridItem colSpan={1}>
-                <InputGroup>
+                <InputGroup maxWidth="80">
                     <Input 
                         padding={4} 
                         size="sm"
@@ -79,6 +79,11 @@ function Products() {
                         focusBorderColor="base.black"
                         borderColor="text.title"
                         onChange={e => {
+                            if (e == "") {
+                                axios.get("https://fakestoreapi.com/products?limit=6").then(({data}) => {
+                                    setProducts(data);
+                                })
+                            }
                             let f = products.filter(item => item.title.toLowerCase().includes(e.target.value));
                             setProducts(f);
                         }}

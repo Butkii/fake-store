@@ -24,7 +24,9 @@ function Header() {
     return <Box>
         <Box bgColor="base.white">
             <Flex paddingX={20} paddingY={6}>
-                <Heading fontWeight={700} color="secondary.500" size="xl">Dealerz.</Heading>
+                <Link as={RouterLink} to='/'>
+                    <Heading fontWeight={700} color="secondary.500" size="xl">Dealerz.</Heading>
+                </Link>
                 <Spacer/>
                 <Icon mx={2} my={2} color="text.title" as={ BsTelephone }/>
                 <Text my={1} mr={4} color="text.title" fontWeight={500}> Call Center </Text>
@@ -34,7 +36,7 @@ function Header() {
         </Box>
         <Box>
             <Flex paddingX={20} paddingY={6} alignItems="center">
-                <Link as={RouterLink }to='/shop' my={1} mr={4} color="text.title" fontWeight={500} size={16}> 
+                <Link as={RouterLink } to='/shop' my={1} mr={4} color="text.title" fontWeight={500} size={16}> 
                     Shop 
                 </Link>
                 <Text my={1} mr={4} color="text.title" fontWeight={500} size={16}> 
