@@ -11,29 +11,30 @@ import {
     Tag,
     SimpleGrid,
 } from '@chakra-ui/react';
+import Header from './Header';
 
 const StoreItem = ({title, category}) => {
     return <Box p={4} borderRadius="lg" borderWidth="1px">
         <Text fontSize={12} color={'gray.400'}>
             Category {category}
         </Text>
-        <Flex alignItems="center">
-            <Text noOfLines={1} fontSize="large" fontWeight="bold">
-                {title}
-            </Text>
-            <Spacer />
-        </Flex>
+        <Text mt={2} noOfLines={1} fontSize="large" fontWeight="bold">
+            {title}
+        </Text>
     </Box>
 }
 
 function Store({items, onItemAdd}) {
     return (
-        <Box p={4}>
-            <SimpleGrid columns={3} spacing={4}>
-                {items.map(item => {
-                    return <StoreItem title={item.title} category={item.category} />
-                })}
-            </SimpleGrid>
+        <Box>
+            <Header/>
+            <Box p={4}>
+                <SimpleGrid columns={3} spacing={4}>
+                    {items.map(item => {
+                        return <StoreItem title={item.title} category={item.category} />
+                    })}
+                </SimpleGrid>
+            </Box>
         </Box>
     );
 }
