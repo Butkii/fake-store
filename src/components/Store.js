@@ -9,37 +9,31 @@ import {
     Flex, 
     Spacer, 
     Tag,
+    SimpleGrid,
 } from '@chakra-ui/react';
 
-const StoreItem = ({title, price}) => {
+const StoreItem = ({title, category}) => {
     return <Box p={4} borderRadius="lg" borderWidth="1px">
+        <Text fontSize={12} color={'gray.400'}>
+            Category {category}
+        </Text>
         <Flex alignItems="center">
-            <Heading size="md">{title}</Heading>
+            <Text noOfLines={1} fontSize="large" fontWeight="bold">
+                {title}
+            </Text>
             <Spacer />
-            <Tag>${price}</Tag>
         </Flex>
     </Box>
 }
 
 function Store({items, onItemAdd}) {
-    const nameRef = useRef();
-    const priceRef = useRef();
-
     return (
         <Box p={4}>
-            <Stack>
+            <SimpleGrid columns={3} spacing={4}>
                 {items.map(item => {
-                    return <StoreItem title={item.title} price={item.price} />
+                    return <StoreItem title={item.title} category={item.category} />
                 })}
-            </Stack>
-            <Input ref={nameRef} mt={10} placeholder="Item name"/>
-            <Input ref={priceRef} mt={2} placeholder="Price" type="number"/>
-            <Button mt={2} onClick={() => {
-                onItemAdd({
-                    title: nameRef.current.value,
-                    price: priceRef.current.value,
-                })
-            }}>Add Item</Button>
+            </SimpleGrid>
         </Box>
     );
 }

@@ -3,22 +3,13 @@ import Store from './components/Store';
 import axios from 'axios';
 
 function App() {
-  const [storeItem, setStoreItem] = useState(
-    [
-      {
-        title: "Item 1",
-        price: 100,
-      },
-      {
-        title: "Item 2",
-        price: 40,
-      },
-      {
-        title: "Item 3",
-        price: 85,
-      },
-    ]
-  );
+  const [storeItem, setStoreItem] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://fakestoreapi.com/products").then(({data}) => {
+     setStoreItem(data);
+    })
+  }, []);
 
   return (
     <div>
